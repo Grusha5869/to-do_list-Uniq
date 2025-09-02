@@ -1,0 +1,16 @@
+{
+  "name": "to-do_list-uniq",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass src:dist/css",
+    "watch-css": "sass --watch src:dist/css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.91.0"
+  }
+}
