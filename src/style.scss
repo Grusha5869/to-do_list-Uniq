@@ -11,23 +11,91 @@ body {
 }
 * {
     box-sizing: border-box;
+    font-family: 'Inter';
 };
 h1 {
     margin: 0;
+}
+h2 {
+    margin: 0;
+}
+ul {
+    margin: 12px 0;
+    padding: 0 20px;
+}
+li {
+    font-weight: 300;
 }
 
 .to-do_list {
     background-color: var(--primary-light);
     padding-top: 15px;
-    &__head {
+    &__base {
+        background-color: var(--light);
         border-radius: 5px;
-        background-color: var(--primary);
+    }
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 58px;
+        padding: 0 10px;
         &__title {
-            width: 100%;
-            height: 50px;
             display: inline;
+            font-weight: 500;
+        }
+
+        &__wrapper {
+            
+            &__info {
+                &__btn {
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+                &__img {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
         }
     }
+
+    &__info {
+        margin-top: 15px;
+        padding: 10px;
+        transition: opacity 0.5s ease;
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+            &__title {
+                font-weight: 500;
+            }
+            &__sleep {
+                &__btn {
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+                &__img {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+        &__possibl {
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        &__text {
+            font-weight: 300;
+        }
+        
+    }
+}
+.sleep {
+    display: none;
 }
 .container {
     max-width: 700px;

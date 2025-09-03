@@ -5,15 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do - список дел</title>
     <meta name="description" content="Список дел без регистрации">
+    <link rel="stylesheet" href="dist/css/fonts.css">
     <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body>
     <div class="to-do_list">
         <div class="container">
-            <div class="to-do_list__head">
+            <div class="to-do_list__base to-do_list__head">
                 <h1 class="to-do_list__head__title">To Do</h1>
+                <div class="to-do_list__head__wrapper">
+                    <div class="to-do_list__head__wrapper__info">
+                        <button class="to-do_list__head__wrapper__info__btn" title="О проекте">
+                            <img class="to-do_list__head__wrapper__info__img" src="src/icons/information_1843058.png" alt="О проекте">
+                        </button>
+                    </div>
+                </div>
             </div>
+
+            <div class="to-do_list__base to-do_list__info">
+                <div class="to-do_list__info__wrapper">
+                    <h2 class="to-do_list__info__wrapper__title">To-Do список дел</h2>
+                    <div class="to-do_list__info__wrapper__sleep">
+                        <button class="to-do_list__info__wrapper__sleep__btn" title="Скрыть">
+                            <img class="to-do_list__info__wrapper__sleep__img" src="src/icons/watch_15501836.png" alt="Скрыть">
+                        </button>
+                    </div>
+
+                    
+                </div>
+                <div class="to-do_list__info__text">
+                    Сервис "Список дел" — это удобное и интуитивно понятное приложение, которое поможет вам организовать свои задачи и повысить продуктивность. <br><br>
+                    С его помощью вы сможете создавать, редактировать и удалять задачи, а также отслеживать прогресс.
+                </div>
+                <div class="to-do_list__info__possibl">Основные функции:</div>
+                <ul>
+                    <li>Создание задач: Легко добавляйте новые задачи и группируйте их по категориям.</li>
+                    <li>Приоритеты: Помечайте задачи по уровням важности, чтобы сосредоточиться на наиболее значимых делах.</li>
+                    <li>Отслеживание прогресса: Отмечайте выполненные задачи и наблюдайте за своим успехом.</li>
+                    <li>Интерфейс: Простой и понятный интерфейс, который доступен на разных устройствах.</li>
+                </ul>
+            </div>
+
+            <div class="to-do_list__base check" style="height: 50px; margin-top: 15px;"></div>
         </div>
     </div>
+
+    <script src="src/script.js"></script>
 </body>
 </html>

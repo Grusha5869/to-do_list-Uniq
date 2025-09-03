@@ -1,10 +1,30 @@
 @font-face {
-    font-family: 'FontName';
-    src: url('FileName.eot');
-    src: url('FileName.eot?#iefix') format('embedded-opentype'),
-         url('FileName.woff') format('woff'),
-         url('FileName.ttf') format('truetype'),
-         url('FileName.svg#FontName') format('svg');
+    font-family: 'Inter';
+    src: url('../../src/fonts/Inter_18pt-Thin.ttf') format('truetype');
     font-style: normal;
-    font-weight: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('../../src/fonts/Inter_18pt-Light.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('../../src/fonts/Inter_18pt-Medium.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('../../src/fonts/Inter_18pt-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('../../src/fonts/Inter_18pt-Black.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 900;
 }
