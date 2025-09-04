@@ -29,7 +29,7 @@ li {
 
 .to-do_list {
     background-color: var(--primary-light);
-    padding-top: 15px;
+    padding: 15px 10px;
     &__base {
         background-color: var(--light);
         border-radius: 5px;
@@ -64,7 +64,6 @@ li {
     &__info {
         margin-top: 15px;
         padding: 10px;
-        transition: opacity 0.5s ease;
         &__wrapper {
             display: flex;
             justify-content: space-between;
@@ -92,6 +91,50 @@ li {
             font-weight: 300;
         }
         
+    }
+}
+
+.input-group {
+    display: flex;
+    margin-top: 15px;
+    
+    &__user-input {
+        width: 95%;
+        height: 46px;
+        padding: 5px 10px ;
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        
+    }
+    &__btn {
+        padding: 6px;
+        border: none;
+        border-radius: 5px;
+        width: 50px;
+        cursor: pointer;
+    }
+}
+
+.add {
+    max-height: 100%;
+    position: relative;
+    &__base {
+        background-color: black;
+    }
+    &1 {
+        position: absolute;
+        width: 2px;
+        height: 25px;
+        top: -12px;
+        right: 17px;
+    }
+    &2 {
+        position: absolute;
+        height: 2px;
+        width: 25px;
+        top: -1px;
+        right: 6px;
     }
 }
 .sleep {
