@@ -35,6 +35,13 @@ function createElem() {
     listGroupCheckbox.type = 'checkbox';
     listGroupCheckbox.name = 'list-checkbox';
     listGroupCheckbox.classList.add('list-group__elem__checkbox');
+    listGroupCheckbox.addEventListener('change', () => {
+        if (listGroupCheckbox.checked) {
+            elemListWrapper.remove()
+            let elemListWrapperId = listGroupCheckbox.parentElement.dataset.id
+            removeElem(elemListWrapperId)
+        }
+    });
     
 
     let elemListText = document.createElement('p');
@@ -51,12 +58,19 @@ function getElem(i) {
     const listGroup = document.querySelector('.list-group');
     let elemListWrapper = document.createElement('div');
     elemListWrapper.classList.add("to-do_list__base", "list-group__elem");
+    elemListWrapper.dataset.id = listArr[i].id
 
     let listGroupCheckbox = document.createElement('input');
     listGroupCheckbox.type = 'checkbox';
     listGroupCheckbox.name = 'list-checkbox';
     listGroupCheckbox.classList.add('list-group__elem__checkbox');
-    
+    listGroupCheckbox.addEventListener('change', () => {
+        if (listGroupCheckbox.checked) {
+            elemListWrapper.remove()
+            let elemListWrapperId = listGroupCheckbox.parentElement.dataset.id
+            removeElem(elemListWrapperId)
+        }
+    });
 
     let elemListText = document.createElement('p');
     elemListText.classList.add('list-group__elem__text');
@@ -66,6 +80,14 @@ function getElem(i) {
     elemListWrapper.appendChild(listGroupCheckbox);
     elemListWrapper.appendChild(elemListText);
     listGroup.appendChild(elemListWrapper);
+}
+function removeElem(dataId) {
+    for (let i = 0; i < listArr.length; i++) {
+        if (listArr[i].id === dataId) {
+            listArr.splice(i, 1);
+            localStorage.setItem('listContent', JSON.stringify(listArr));
+        }
+    } 
 }
 
 inputMain.addEventListener('keydown', function(event) {
@@ -88,16 +110,11 @@ inputGroupBtn.addEventListener('click', () => {
         inputMain.value = "";
     }
 });
-/* listGroupCheckbox.addEventListener('change', () => {
-    if (listGroupCheckbox.checked) {
-        console.log(listGroupCheckbox.parentElement);
-        
-    }
-}) */
+
 
 document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < listArr.length; i++) {
         getElem(i)
     };
-
-})
+    
+}) 
