@@ -137,7 +137,18 @@ li {
             margin: 0;
         }
     }
-}
+    &__edit-elem {
+        margin-bottom: 15px;
+        &__textarea {
+            resize: none;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            height: 52px;
+            font-size: 15px;
+        }
+    }
+}   
 
 .add {
     max-height: 100%;

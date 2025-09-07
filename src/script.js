@@ -3,7 +3,7 @@ const infoBlock = document.querySelector('.to-do_list__info');
 const infoBtn = document.querySelector('.to-do_list__info__wrapper__sleep__btn');
 
 function checkClass(elem, elemClass) {
-    elem.classList.toggle(`${elemClass}`)
+    elem.classList.toggle(elemClass)
 };
 
 headBtn.addEventListener('click', () => {
@@ -52,6 +52,8 @@ function createElem() {
     elemListWrapper.appendChild(listGroupCheckbox);
     elemListWrapper.appendChild(elemListText);
     listGroup.appendChild(elemListWrapper);
+
+    editingList(elemListWrapper, elemListText)
 };
 
 function getElem(i) {
@@ -80,6 +82,8 @@ function getElem(i) {
     elemListWrapper.appendChild(listGroupCheckbox);
     elemListWrapper.appendChild(elemListText);
     listGroup.appendChild(elemListWrapper);
+
+    editingList(elemListWrapper, elemListText)
 }
 function removeElem(dataId) {
     for (let i = 0; i < listArr.length; i++) {
@@ -88,6 +92,34 @@ function removeElem(dataId) {
             localStorage.setItem('listContent', JSON.stringify(listArr));
         }
     } 
+}
+function editingList(elemListWrapper, elemListText) {
+    
+    elemListWrapper.addEventListener('dblclick', () => {
+        let editElem = document.createElement('div');
+        editElem.classList.add('list-group__edit-elem');
+        let editElemTextarea = document.createElement('textarea');
+        editElemTextarea.name = 'list-textarea';
+        editElemTextarea.classList.add('to-do_list__base', 'list-group__edit-elem__textarea');
+        
+        //сборка
+        editElem.appendChild(editElemTextarea);
+        elemListWrapper.replaceWith(editElem);
+
+        editElemTextarea.focus();
+        editElemTextarea.select();
+        editElemTextarea.addEventListener('blur', () => {
+            if (editElemTextarea.value.trim() === "") {
+                editElem.replaceWith(elemListWrapper)
+            } else {
+                editElem.replaceWith(elemListWrapper)
+                elemListText.textContent = editElemTextarea.value
+            }
+        });
+
+        /* removeElem() */
+        
+    })
 }
 
 inputMain.addEventListener('keydown', function(event) {
