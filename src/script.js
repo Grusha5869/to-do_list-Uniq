@@ -115,9 +115,17 @@ function editingList(elemListWrapper, elemListText) {
                 editElem.replaceWith(elemListWrapper)
                 elemListText.textContent = editElemTextarea.value
             }
-        });
 
-        /* removeElem() */
+            let elemListWrapperId = elemListWrapper.dataset.id;
+            for (let i = 0; i < listArr.length; i++) {
+                if (listArr[i].id === elemListWrapperId) {
+                    listArr[i].text = editElemTextarea.value;
+                }   
+            }
+
+            localStorage.setItem('listContent', JSON.stringify(listArr));
+        });
+        
         
     })
 }
